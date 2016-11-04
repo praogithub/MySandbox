@@ -3,7 +3,7 @@ global class AccountPlan {
   webservice String area;
 
    webservice String region;
-
+   webservice String State;
    //Define an object in apex that is exposed in apex web service
 
    global class Plan {
