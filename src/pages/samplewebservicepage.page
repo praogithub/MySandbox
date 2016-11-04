@@ -1,0 +1,9 @@
+<apex:page controller="HelloWorldWSContoller" tabStyle="Account">
+
+<apex:form >
+
+{!val}
+
+</apex:form>
+
+</apex:page>

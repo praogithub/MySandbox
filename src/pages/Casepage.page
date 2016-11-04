@@ -1,0 +1,42 @@
+<apex:page controller="VSModals_Con">
+    <vs:importvisualstrap />
+    <apex:form >
+        <vs:visualstrapblock >
+            <vs:pageheader title="Cases" subtitle="Cases List" icon="file"/>
+            <vs:panel title="All Cases" type="primary" id="allCases">
+                <vs:well styleclass="well-sm" style="text-align:center">
+                    <a class="btn btn-success btn-md" onclick="$('#newCase').modal('show');return false;">New Case</a> 
+                </vs:well>
+                <apex:dataTable value="{!cases}" var="case" styleClass="table table-bordered table-hover">
+                    <apex:column value="{!case.CaseNumber}" headerValue="CaseNumber" styleClass="{!IF(case.isClosed,'','warning')}"/>
+                    <apex:column value="{!case.Subject}" headerValue="Subject" styleClass="{!IF(case.isClosed,'','warning')}"/>
+                    <apex:column value="{!case.Status}" headerValue="Status" styleClass="{!IF(case.isClosed,'','warning')}"/>
+                    <apex:column value="{!case.Priority}" headerValue="Priority" styleClass="{!IF(case.isClosed,'','warning')}"/>
+                </apex:dataTable>
+            </vs:panel>
+            
+            <vs:modal id="newCase" title="New Case">
+                <apex:outputPanel layout="block" id="newCasePanel">
+                    <apex:pageBlock mode="maindetail">
+                        <apex:pageBlockSection >
+                            <apex:inputField value="{!caseObj.Subject}"/>
+                            <apex:inputField value="{!caseObj.Status}"/>
+                            <apex:inputField value="{!caseObj.Description}"/>
+                            <apex:inputField value="{!caseObj.Priority}"/>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                    <apex:outputPanel layout="block" styleClass="modal-footer">
+                        <apex:commandButton value="Cancel" styleClass="btn-warning" html-data-dismiss="modal"/>
+                        <apex:commandButton value="Save" styleClass="btn-success" onclick="$(this).button('loading')" html-data-loading-text="Saving..." action="{!saveCase}" reRender="newCasePanel,allCases"/>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!isSuccess}">
+                        <script>
+                            $('#newCase').modal('hide');
+                        </script>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </vs:modal>
+            
+        </vs:visualstrapblock>
+    </apex:form>
+</apex:page>

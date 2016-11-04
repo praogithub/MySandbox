@@ -1,0 +1,12 @@
+<apex:page Controller="productAdd">
+    <apex:form >
+        <apex:pageBlock > 
+            <apex:pageBlockTable value="{!Selectedproducts}" var="c" id="table"> 
+                <apex:column value="{!c.cont.Name}" />                
+                <apex:column >
+                <apex:inputText value="{!c.quantity}"/>
+                </apex:column> 
+            </apex:pageBlockTable> 
+        </apex:pageBlock> 
+    </apex:form> 
+</apex:page>

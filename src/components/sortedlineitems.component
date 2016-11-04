@@ -1,0 +1,19 @@
+<apex:component access="global" controller="SortedLineItemsController">
+<apex:attribute name="value" type="Opportunity" assignTo="{!opportunity}" description="TODO: Describe me"/>
+
+<apex:repeat var="li" value="{!sorted}">
+<tr>
+<td>{!li.PricebookEntry.Product2.Name}</td>
+<td>{!li.Quantity}</td>
+<td>${!li.TotalPrice}</td>
+</tr>
+</apex:repeat>
+
+<!-- Needed to work around limitation that the standard controller cannot "see"
+the linkage between the value attribute and the opportunity property -->
+<apex:variable var="oli" value="{!value.OpportunityLineItems}" rendered="false">
+{!oli.PricebookEntry.Product2.Name}
+{!oli.Quantity}
+{!oli.TotalPrice}
+</apex:variable>
+</apex:component>

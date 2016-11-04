@@ -1,0 +1,19 @@
+{
+    "username": "preetam@thandra.com", 
+    "environment": "production", 
+    "project_name": "MySandbox", 
+    "workspace": "/Users/PThandra/", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "X6FDLDURUPJKCP5B5D6V3WD9LQWTFYBO", 
+    "metadata_container": "1dci00000003aCNAAY", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}

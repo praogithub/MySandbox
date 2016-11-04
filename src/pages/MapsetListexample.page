@@ -1,0 +1,10 @@
+<apex:page controller="MapListSetexample">
+<apex:form >
+Inside Map     :<apex:outputText value="{!mc}"/><br/> 
+Inside List    :<apex:outputText value="{!insideList}"/><br/>
+Inside Set     :<apex:outputText value="{!insideSet}"/><br/>
+Inside String  :<apex:outputText value="{!hellostr }"/><br/>
+Inside Double List :<apex:outputText value="{!names }"/><br/>
+
+</apex:form>
+</apex:page>

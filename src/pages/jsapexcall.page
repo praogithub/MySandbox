@@ -1,0 +1,27 @@
+<apex:page >
+ 
+  
+
+  
+  
+  
+  <apex:form >
+  <apex:includeScript value="{!$Resource.example}"/>
+  <script type="text/javascript">
+  function btnclick(){
+  
+  var account = sforce.sObject("Account");
+  alert(account);
+  var id = sforce.apex.execute("myClass","makeContact",
+                             {lastName:"Smith",
+                              a:account});
+
+  sforce.debug.trace=true;
+  
+  }
+  </script>
+  
+  <apex:commandButton value="click" onclick="btnclick();"/>
+  </apex:form>
+  
+</apex:page>

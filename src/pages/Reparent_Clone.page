@@ -1,0 +1,27 @@
+<apex:page standardController="Contact" recordSetVar="record" showHeader="false" extensions="cloneAndReparentPage">
+<apex:form >
+
+<apex:pageBlock >
+<apex:pageBlockSection >
+
+<apex:outputPanel >
+
+ Select an account, and then {!selectedCount} contact{!if(selectedCount==1,'','s')} will be reparented and cloned.
+
+
+</apex:outputPanel>
+<apex:inputField value="{!Contact.AccountId}" /> 
+
+
+
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+<apex:commandButton action="{!cloneAndReparent}" value="Clone & Reparent"/>
+</apex:pageBlockButtons>
+
+</apex:pageBlock>
+
+
+</apex:form>
+ 
+</apex:page>

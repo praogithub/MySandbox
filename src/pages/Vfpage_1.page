@@ -1,0 +1,18 @@
+<apex:page controller="productAdd">
+<table  width="90%">
+        <apex:form >
+            <apex:repeat value="{!ProdList}" var="l" >               
+                <tr>
+                <td>
+                <apex:inputCheckbox value="{!l.selected}"/>
+                </td>
+                <td class="fieldname">{!l.cont.name}</td>                       
+                </tr>                
+            </apex:repeat>
+                <tr>
+                <apex:commandButton value="Add Quantity" action="{!AddQuantity}"/>
+                </tr>             
+        </apex:form> 
+    </table>
+ 
+</apex:page>

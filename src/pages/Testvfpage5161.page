@@ -1,0 +1,3 @@
+<apex:page controller="testvfpage51135" >
+<apex:outputtext value="{!buildTable}" escape="false" id="tblHTML"/>
+</apex:page>

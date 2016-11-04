@@ -1,0 +1,8 @@
+<apex:page controller="CsvWriteExampleController" cache="true" contentType="text/csv#Export.csv" language="en-US">
+"Col A","Col B"
+<apex:repeat value="{!myList}" var="a">
+  <apex:repeat value="{!a}" var="asub">
+  "{!asub.PhoneNumber}","{!asub.Name}"
+  </apex:repeat>
+  </apex:repeat>  
+</apex:page>

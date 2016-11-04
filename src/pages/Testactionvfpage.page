@@ -1,0 +1,10 @@
+<apex:page >
+  <apex:actionRegion >
+  <apex:pageBlock >
+  
+  
+  </apex:pageBlock>
+  
+  
+  </apex:actionRegion>
+</apex:page>
